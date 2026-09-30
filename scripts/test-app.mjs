@@ -90,7 +90,12 @@ try {
     root,
     logLevel: 'warn',
     plugins: [{ name: 'test:hydration-route', configureServer: installHydrationRoute }],
-    server: { host: '127.0.0.1', port: 0 },
+    server: {
+      host: '127.0.0.1',
+      port: 0,
+      // Keep rapid edit/restore writes observable despite Linux watcher throttling.
+      watch: { awaitWriteFinish: { stabilityThreshold: 100, pollInterval: 10 } },
+    },
   })
   await server.listen()
   const address = server.httpServer.address()

@@ -43,7 +43,8 @@ try {
       ),
     )
     console.log(`\nPacked consumer: ${version}`)
-    execFileSync('pnpm', ['install', '--offline', '--ignore-scripts'], {
+    // Frozen-lockfile installs may cache packages without registry metadata.
+    execFileSync('pnpm', ['install', '--prefer-offline', '--ignore-scripts'], {
       cwd: root,
       stdio: 'inherit',
     })
