@@ -62,9 +62,9 @@
     "svgo": "^4.1.0"
   },
   "peerDependencies": {
-    "@solidjs/vite-plugin": "^3.0.0-next.33",
-    "@solidjs/web": "^2.0.0-rc.2",
-    "solid-js": "^2.0.0-rc.2",
+    "@solidjs/vite-plugin": "^3.0.0-next.34",
+    "@solidjs/web": "^2.0.0-rc.3",
+    "solid-js": "^2.0.0-rc.3",
     "vite": "^8.0.0"
   },
   "devDependencies": {

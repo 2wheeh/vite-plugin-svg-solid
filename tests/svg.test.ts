@@ -18,7 +18,7 @@ describe('SVG to JSX', () => {
       'icon.svg',
     )
     expect(code).toContain('viewBox={"0 0 10 10"}')
-    expect(code).toContain('{...{"xlink:href":"#a"}}')
+    expect(code).toContain('xlink:href={"#a"}')
     expect(code).toContain('{"path { fill: red; }"}')
     expect(code).toContain('{" a  b "}')
     expect(code).not.toContain('comment')

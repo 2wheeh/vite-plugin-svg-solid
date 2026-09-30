@@ -4,15 +4,10 @@ function serialize(node: Node, root = false): string {
   switch (node.nodeType) {
     case 1: {
       const element = node as Element
-      const attributes = Array.from(element.attributes, (attribute) => {
-        // RC2's native compiler does not parse JSX namespace attributes yet.
-        // Object keys preserve XML names while Solid's SVG spread handles the
-        // corresponding namespace at runtime (including xlink:href).
-        if (attribute.name.includes(':')) {
-          return ` {...${JSON.stringify({ [attribute.name]: attribute.value })}}`
-        }
-        return ` ${attribute.name}={${JSON.stringify(attribute.value)}}`
-      }).join('')
+      const attributes = Array.from(
+        element.attributes,
+        (attribute) => ` ${attribute.name}={${JSON.stringify(attribute.value)}}`,
+      ).join('')
       const children = Array.from(element.childNodes, (child) => serialize(child)).join(
         '',
       )
