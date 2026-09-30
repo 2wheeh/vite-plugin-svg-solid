@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-svg-solid",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Import SVG files as Solid 2 components in Vite.",
   "type": "module",
   "license": "MIT",
