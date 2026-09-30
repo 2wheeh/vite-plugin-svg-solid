@@ -34,7 +34,7 @@ try {
           packageManager: manifest.packageManager,
           dependencies: {
             ...fixture.dependencies,
-            'vite-plugin-svgs': `file:../${tarball}`,
+            'vite-plugin-svg-solid': `file:../${tarball}`,
             '@types/node': manifest.devDependencies['@types/node'],
           },
         },

@@ -7,6 +7,6 @@
     "@solidjs/web": "2.0.0-rc.9",
     "solid-js": "2.0.0-rc.9",
     "vite": "^8.3.1",
-    "vite-plugin-svgs": "workspace:*"
+    "vite-plugin-svg-solid": "workspace:*"
   }
 }

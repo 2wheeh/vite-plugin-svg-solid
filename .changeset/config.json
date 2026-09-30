@@ -1,6 +1,9 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@4.0.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "2wheeh/vite-plugin-svgs" }],
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "2wheeh/vite-plugin-svg-solid" }
+  ],
   "commit": false,
   "fixed": [],
   "linked": [],

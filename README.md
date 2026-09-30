@@ -1,4 +1,4 @@
-# vite-plugin-svgs
+# vite-plugin-svg-solid
 
 Import SVG files as Solid 2 components in Vite.
 
@@ -9,7 +9,7 @@ For Solid `rc.10`:
 
 ```sh
 pnpm add --save-exact solid-js@2.0.0-rc.10 @solidjs/web@2.0.0-rc.10
-pnpm add -D vite-plugin-svgs vite@^8
+pnpm add -D vite-plugin-svg-solid vite@^8
 pnpm add -D --save-exact @solidjs/vite-plugin@3.0.0-next.46
 ```
 
@@ -27,7 +27,7 @@ Tested combinations (`solid-js` and `@solidjs/web` must use the same version):
 // vite.config.ts
 import solid from '@solidjs/vite-plugin';
 import { defineConfig } from 'vite';
-import svgs from 'vite-plugin-svgs';
+import svgs from 'vite-plugin-svg-solid';
 
 export default defineConfig({
   plugins: [svgs(), solid()],
@@ -41,7 +41,7 @@ Add the SVG component types:
 ```ts
 // src/vite-env.d.ts
 /// <reference types="vite/client" />
-/// <reference types="vite-plugin-svgs/client" />
+/// <reference types="vite-plugin-svg-solid/client" />
 ```
 
 Set `jsx: "preserve"` and `jsxImportSource: "@solidjs/web"` in your tsconfig.

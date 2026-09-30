@@ -7,7 +7,7 @@ export function createSolidTransform(config: ResolvedConfig): SolidTransform {
   const hook = config.plugins.find((plugin) => plugin.name === 'solid')?.transform
   if (!hook) {
     throw new Error(
-      'vite-plugin-svgs requires @solidjs/vite-plugin. Add solid() to plugins.',
+      'vite-plugin-svg-solid requires @solidjs/vite-plugin. Add solid() to plugins.',
     )
   }
   const transform = typeof hook === 'function' ? hook : hook.handler

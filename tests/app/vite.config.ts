@@ -1,6 +1,6 @@
 import solid from '@solidjs/vite-plugin'
 import { defineConfig } from 'vite'
-import svgs from 'vite-plugin-svgs'
+import svgs from 'vite-plugin-svg-solid'
 
 export default defineConfig({
   plugins: [svgs(), solid({ ssr: true })],

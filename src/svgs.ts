@@ -20,7 +20,7 @@ export default function svgs(options: SvgsOptions = {}): Plugin {
   let transformSolid: ReturnType<typeof createSolidTransform> | undefined
 
   return {
-    name: 'vite-plugin-svgs',
+    name: 'vite-plugin-svg-solid',
     enforce: 'pre',
     configResolved(config) {
       transformSolid = createSolidTransform(config)
