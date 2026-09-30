@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "jsxImportSource": "@solidjs/web",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": ["vite/client", "vite-plugin-svgs/client"]
+  },
+  "include": ["*.tsx", "*.d.ts"]
+}

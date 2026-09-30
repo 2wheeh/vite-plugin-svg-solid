@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+  <defs><linearGradient id="paint"><stop stop-color="red" /><stop offset="1" stop-color="blue" /></linearGradient><path id="shape" d="M0 0h20v20H0z" /></defs>
+  <use xlink:href="#shape" fill="url(#paint)" />
+  <style><![CDATA[text { font-size: 4px; }]]></style>
+  <text y="40">{literal} &amp; &lt;safe&gt;</text>
+</svg>

@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+permissions: {}
+
+jobs:
+  verify:
+    uses: ./.github/workflows/verify.yaml
+    permissions:
+      contents: read
+  release:
+    needs: [verify]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+      - run: pnpm install --frozen-lockfile
+      - uses: changesets/action@v2
+        with:
+          version-script: pnpm version:packages
+          publish-script: pnpm release
+          github-token: ${{ secrets.GITHUB_TOKEN }}

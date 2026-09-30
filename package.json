@@ -1,0 +1,87 @@
+{
+  "name": "vite-plugin-svgs",
+  "version": "0.1.0",
+  "description": "Import SVG files as Solid 2 components in Vite.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Wonhee Lee <2wheeh@gmail.com>",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2wheeh/vite-plugin-svgs.git"
+  },
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "solid",
+    "solid-js",
+    "svg"
+  ],
+  "files": [
+    "dist",
+    "client.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./client": {
+      "types": "./client.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "changeset": "changeset",
+    "version:packages": "changeset version",
+    "check": "pnpm lint && pnpm typecheck",
+    "format": "biome format --write .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "pnpm test:unit && pnpm test:e2e",
+    "test:unit": "vitest run",
+    "test:e2e": "pnpm build && node scripts/test-compatibility.mjs",
+    "test:build": "publint --strict && attw --pack . --profile esm-only",
+    "test:pack": "node scripts/test-packed-consumer.mjs",
+    "test:package": "pnpm build && pnpm test:build && pnpm test:pack",
+    "verify": "pnpm check && pnpm test:unit && pnpm test:e2e && pnpm test:package",
+    "release": "pnpm build && changeset publish"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "^0.9.12",
+    "svgo": "^4.1.0"
+  },
+  "peerDependencies": {
+    "@solidjs/vite-plugin": "^3.0.0-next.33",
+    "@solidjs/web": "^2.0.0-rc.2",
+    "solid-js": "^2.0.0-rc.2",
+    "vite": "^8.0.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@biomejs/biome": "2.5.10",
+    "@changesets/changelog-github": "^1.0.1",
+    "@changesets/cli": "^3.0.3",
+    "@playwright/test": "^1.63.0",
+    "@solidjs/vite-plugin": "3.0.0-next.46",
+    "@solidjs/web": "2.0.0-rc.10",
+    "@types/node": "^24.0.0",
+    "publint": "^0.3.24",
+    "solid-js": "2.0.0-rc.10",
+    "tsdown": "^0.21.9",
+    "typescript": "^6.0.0",
+    "vite": "^8.3.1",
+    "vitest": "^4.1.10"
+  },
+  "packageManager": "pnpm@10.34.4"
+}
