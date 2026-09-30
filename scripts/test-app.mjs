@@ -54,6 +54,12 @@ async function checkPage(url) {
   const use = page.getByTestId('complex').locator('use')
   const href = await use.getAttribute('xlink:href')
   assert.ok(href?.startsWith('#'))
+  assert.equal(
+    await use.evaluate((node) =>
+      node.getAttributeNS('http://www.w3.org/1999/xlink', 'href'),
+    ),
+    href,
+  )
   assert.equal(await page.locator(`[id="${href.slice(1)}"]`).count(), 1)
   assert.deepEqual(errors, [])
 }

@@ -1,0 +1,12 @@
+{
+  "name": "@svgs/test-rc3",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@solidjs/vite-plugin": "3.0.0-next.34",
+    "@solidjs/web": "2.0.0-rc.3",
+    "solid-js": "2.0.0-rc.3",
+    "vite": "^8.3.1",
+    "vite-plugin-svg-solid": "workspace:*"
+  }
+}

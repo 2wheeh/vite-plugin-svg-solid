@@ -4,7 +4,8 @@ Import SVG files as Solid 2 components in Vite.
 
 ## Install
 
-Requires Node.js 22.12+, Vite 8, and `@solidjs/vite-plugin` for Solid 2.
+Requires Node.js 22.12+, Vite 8, Solid `2.0.0-rc.3` or later, and
+`@solidjs/vite-plugin` `3.0.0-next.34` or later within their current major versions.
 For Solid `rc.10`:
 
 ```sh
@@ -17,7 +18,7 @@ Tested combinations (`solid-js` and `@solidjs/web` must use the same version):
 
 | Solid | `@solidjs/vite-plugin` |
 | --- | --- |
-| `2.0.0-rc.2` | `3.0.0-next.33` |
+| `2.0.0-rc.3` | `3.0.0-next.34` |
 | `2.0.0-rc.9` | `3.0.0-next.44` |
 | `2.0.0-rc.10` | `3.0.0-next.46` |
 

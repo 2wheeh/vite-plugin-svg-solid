@@ -18,7 +18,7 @@ try {
   execFileSync('pnpm', ['pack', '--pack-destination', temporary], { stdio: 'inherit' })
   const tarball = (await readdir(temporary)).find((file) => file.endsWith('.tgz'))
   assert.ok(tarball)
-  for (const version of ['rc2', 'rc9', 'rc10']) {
+  for (const version of ['rc3', 'rc9', 'rc10']) {
     const fixture = JSON.parse(
       await readFile(`tests/fixtures/${version}/package.json`, 'utf8'),
     )
